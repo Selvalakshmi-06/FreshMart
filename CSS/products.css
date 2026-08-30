@@ -1,0 +1,722 @@
+/* =========================================
+   FRESHMART PRODUCT CARDS
+========================================= */
+
+.product-card {
+    background: #ffffff;
+    border: 1px solid #e8eee8;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+    transition: 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(46, 125, 50, 0.15);
+}
+
+
+/* PRODUCT IMAGE */
+
+.product-image {
+    height: 190px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: linear-gradient(
+        135deg,
+        #eef9ee,
+        #fff8e8
+    );
+
+    font-size: 85px;
+
+    transition: 0.3s ease;
+}
+
+.product-card:hover .product-image {
+    transform: scale(1.03);
+}
+
+
+/* PRODUCT DETAILS */
+
+.product-info {
+    padding: 20px;
+}
+
+.product-info h3 {
+    font-size: 20px;
+    color: #23432c;
+    margin-bottom: 7px;
+}
+
+.product-category {
+    color: #7a857d;
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+.product-price {
+    color: #2e7d32;
+    font-size: 19px;
+    font-weight: 700;
+}
+
+
+/* BUTTON AREA */
+
+.product-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 18px;
+}
+
+
+/* WISHLIST */
+
+.product-actions .wishlist {
+    width: 45px;
+    height: 45px;
+
+    border: 1px solid #dce8dc;
+    background: #f7faf7;
+
+    border-radius: 12px;
+
+    font-size: 22px;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.product-actions .wishlist:hover {
+    background: #ffecec;
+    color: #e53935;
+}
+
+
+/* ADD TO CART */
+
+.product-actions .add-cart {
+    flex: 1;
+
+    border: none;
+    border-radius: 12px;
+
+    background: #2e7d32;
+    color: white;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.product-actions .add-cart:hover {
+    background: #1b5e20;
+    transform: translateY(-2px);
+}
+
+
+/* SEARCH */
+
+.search-box {
+    border: 2px solid #e1e9e1;
+    border-radius: 14px;
+    padding: 14px 18px;
+    transition: 0.3s ease;
+}
+
+.search-box:focus {
+    outline: none;
+    border-color: #43a047;
+}
+
+
+/* CATEGORY FILTERS */
+
+.filter-btn {
+    border: none;
+    padding: 11px 20px;
+    border-radius: 30px;
+
+    background: #eef5ee;
+    color: #35613b;
+
+    font-weight: 600;
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.filter-btn:hover {
+    background: #dcefdc;
+    transform: translateY(-2px);
+}
+
+.filter-btn.active {
+    background: #2e7d32;
+    color: white;
+}
+.product-image img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+}
+/* =========================================
+   PRODUCTS PAGE NAVBAR
+   ========================================= */
+
+.navbar {
+    width: 90%;
+    margin: 20px auto;
+    padding: 12px 20px;
+
+    background: white;
+
+    border-radius: 15px;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.10);
+
+    box-sizing: border-box;
+}
+
+
+.navbar .nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+}
+
+
+/* FreshMart box */
+
+.navbar .logo.nav-item {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 12px 20px;
+
+    background: #ffffff;
+
+    border: 2px solid #d8ead0;
+
+    border-radius: 12px;
+
+    color: #2e7d32;
+
+    font-size: 22px;
+    font-weight: 700;
+
+    text-decoration: none;
+}
+
+
+/* Navigation */
+
+.navbar .nav-links {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+}
+
+
+/* Individual boxes */
+
+.navbar .nav-links .nav-item {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 12px 22px;
+
+    background: #f1f8e9;
+
+    border: 2px solid #d8ead0;
+
+    border-radius: 12px;
+
+    color: #2e7d32;
+
+    font-size: 18px;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition: 0.3s;
+}
+
+
+/* Products active box */
+
+.navbar .nav-links .nav-item.active {
+    background: #4caf50;
+
+    border-color: #4caf50;
+
+    color: white;
+}
+
+
+/* Hover */
+
+.navbar .nav-links .nav-item:hover {
+    background: #4caf50;
+
+    border-color: #4caf50;
+
+    color: white;
+}
+/* ========================================
+   PRODUCTS PAGE - SEARCH & CATEGORIES
+======================================== */
+
+
+/* Search area */
+
+.search-filter {
+    width: 80%;
+    max-width: 850px;
+
+    margin: 0 auto 30px;
+
+    display: flex;
+
+    justify-content: center;
+}
+
+
+.search-box {
+    width: 100%;
+
+    padding: 18px 22px;
+
+    border: 2px solid #d8ead0;
+
+    border-radius: 14px;
+
+    background: #ffffff;
+
+    font-size: 18px;
+
+    color: #333;
+
+    outline: none;
+
+    box-shadow:
+        0 5px 18px rgba(46, 125, 50, 0.08);
+
+    transition: 0.3s;
+}
+
+
+.search-box:focus {
+    border-color: #4caf50;
+
+    box-shadow:
+        0 6px 22px rgba(46, 125, 50, 0.14);
+}
+
+
+.search-box::placeholder {
+    color: #999;
+
+    font-size: 17px;
+}
+
+
+/* ========================================
+   CATEGORY BUTTONS
+======================================== */
+
+.filter-buttons {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 14px;
+
+    flex-wrap: wrap;
+
+    margin: 25px auto 40px;
+
+}
+
+
+/* Individual category boxes */
+
+.filter-btn {
+
+    min-width: 115px;
+
+    padding: 12px 20px;
+
+    border: 2px solid #d8ead0;
+
+    border-radius: 12px;
+
+    background: #ffffff;
+
+    color: #2e7d32;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+
+}
+
+
+/* Hover */
+
+.filter-btn:hover {
+
+    background: #f1f8e9;
+
+    border-color: #4caf50;
+
+    transform: translateY(-2px);
+
+}
+
+
+/* Selected category */
+
+.filter-btn.active {
+
+    background: #4caf50;
+
+    border-color: #4caf50;
+
+    color: white;
+
+    box-shadow:
+        0 5px 14px rgba(76, 175, 80, 0.25);
+
+}
+
+
+/* ========================================
+   PRODUCT PAGE HEADING
+======================================== */
+
+.page-header {
+
+    padding: 55px 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f1f8e9,
+            #ffffff
+        );
+
+}
+
+
+.page-header h1 {
+
+    font-size: 42px;
+
+    color: #1b5e20;
+
+    margin-bottom: 8px;
+
+}
+
+
+.page-header p {
+
+    font-size: 18px;
+
+    color: #68746b;
+
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+
+    .search-filter {
+
+        width: 95%;
+
+    }
+
+
+    .filter-btn {
+
+        min-width: 100px;
+
+        padding: 10px 14px;
+
+    }
+
+}
+/* ========================================
+   PRODUCTS - 3 CARDS PER ROW
+======================================== */
+
+.product-grid {
+    width: 90%;
+    max-width: 1050px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 28px;
+}
+
+
+/* Individual product card */
+
+.product-card {
+    width: 100%;
+
+    background: #ffffff;
+
+    border: 1px solid #e5eee6;
+
+    border-radius: 16px;
+
+    overflow: hidden;
+
+    box-shadow: 0 5px 18px rgba(46, 125, 50, 0.08);
+
+    transition: 0.3s ease;
+}
+
+
+.product-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow: 0 10px 25px rgba(46, 125, 50, 0.15);
+}
+
+
+/* Product image area */
+
+.product-image {
+    height: 210px;
+
+    background: #f1f8f2;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-size: 90px;
+
+    overflow: hidden;
+}
+
+
+/* Actual image */
+
+.product-image img {
+    width: 150px;
+
+    height: 150px;
+
+    object-fit: contain;
+}
+
+
+/* Product information */
+
+.product-info {
+    padding: 20px;
+}
+
+
+.product-info h3 {
+    font-size: 21px;
+
+    color: #1b5e20;
+
+    margin-bottom: 5px;
+}
+
+
+.product-category {
+    color: #888;
+
+    font-size: 14px;
+
+    margin-bottom: 10px;
+}
+
+
+.product-price {
+    display: block;
+
+    font-size: 19px;
+
+    font-weight: bold;
+
+    color: #2e7d32;
+
+    margin-bottom: 12px;
+}
+
+
+/* Like + Add to Cart */
+
+.product-actions {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 10px;
+}
+
+
+.wishlist {
+    width: 42px;
+
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #fff;
+
+    border: 1px solid #d8ead0;
+
+    border-radius: 9px;
+
+    font-size: 22px;
+
+    color: #777;
+
+    cursor: pointer;
+}
+
+
+.wishlist:hover,
+.wishlist.liked {
+    color: #e53935;
+
+    border-color: #e53935;
+
+    background: #fff5f5;
+}
+
+
+.add-cart {
+    flex: 1;
+
+    padding: 11px 15px;
+
+    background: #2e7d32;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 9px;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+.add-cart:hover {
+    background: #1b5e20;
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 900px) {
+
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+
+        width: 90%;
+    }
+
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+
+    .product-grid {
+        grid-template-columns: 1fr;
+
+        width: 92%;
+    }
+
+}
+/* ========================================
+   ADD TO CART BUTTON FIX
+======================================== */
+
+.product-actions {
+    position: relative;
+    z-index: 100;
+    display: flex;
+    gap: 10px;
+}
+
+.product-actions button {
+    position: relative;
+    z-index: 101;
+    pointer-events: auto;
+    cursor: pointer;
+}
+
+.add-cart {
+    position: relative;
+    z-index: 102;
+    pointer-events: auto !important;
+    cursor: pointer !important;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+}

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>FreshMart - Cart</title>
+
+    <link rel="stylesheet"
+          href="../CSS/style.css">
+
+</head>
+
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+    <div class="container nav-container">
+
+        <a href="index.html" class="logo">
+            🛒 FreshMart
+        </a>
+
+        <nav class="nav-links">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="products.html">
+                Products
+            </a>
+
+            <a href="about.html">
+                About
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+        </nav>
+
+        <div class="nav-icons">
+
+            <a href="cart.html">
+                🛒
+                <span class="cart-count"
+                      id="cartCount">
+                    0
+                </span>
+            </a>
+
+            <a href="login.html">
+                👤
+            </a>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- ================= PAGE HEADER ================= -->
+
+<section class="page-header">
+
+    <div class="container">
+
+        <h1>
+            Shopping Cart
+        </h1>
+
+        <p>
+            Review your selected products
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CART SECTION ================= -->
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="cart-container">
+
+
+            <!-- CART ITEMS -->
+
+            <div>
+
+                <h2>
+                    Your Cart
+                </h2>
+
+                <br>
+
+                <div id="cartItems">
+
+                    <!-- Products will appear here -->
+
+                </div>
+
+            </div>
+
+
+            <!-- CART SUMMARY -->
+
+            <div class="cart-summary">
+
+                <h2>
+                    Order Summary
+                </h2>
+
+
+                <div class="summary-row">
+
+                    <span>
+                        Subtotal
+                    </span>
+
+                    <span id="subtotal">
+                        ₹0
+                    </span>
+
+                </div>
+
+
+                <div class="summary-row">
+
+                    <span>
+                        Delivery
+                    </span>
+
+                    <span id="delivery">
+                        ₹40
+                    </span>
+
+                </div>
+
+
+                <div class="summary-row summary-total">
+
+                    <span>
+                        Total
+                    </span>
+
+                    <span id="total">
+                        ₹0
+                    </span>
+
+                </div>
+
+
+                <br>
+
+
+                <button
+                    class="btn btn-primary"
+                    id="checkoutBtn"
+                    style="width:100%;">
+
+                    Proceed to Checkout
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+
+    <div class="container footer-grid">
+
+        <div>
+
+            <h2>
+                🛒 FreshMart
+            </h2>
+
+            <p>
+                Fresh groceries made simple.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                Quick Links
+            </h3>
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="products.html">
+                Products
+            </a>
+
+            <a href="about.html">
+                About
+            </a>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                Contact
+            </h3>
+
+            <p>
+                Chennai, India
+            </p>
+
+            <p>
+                support@freshmart.com
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        © 2026 FreshMart. All Rights Reserved.
+
+    </div>
+
+</footer>
+
+
+<!-- CART JAVASCRIPT -->
+
+<script src="../JAVASCRIPT/cart.js"></script>
+
+</body>
+
+</html>

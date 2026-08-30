@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>FreshMart - Checkout</title>
+
+    <link rel="stylesheet"
+          href="../CSS/style.css">
+
+    <style>
+
+        .checkout-section {
+            padding: 50px 20px;
+            min-height: 70vh;
+        }
+
+        .checkout-container {
+            max-width: 1000px;
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: 1.5fr 1fr;
+
+            gap: 30px;
+        }
+
+        .checkout-card,
+        .summary-card {
+            background: white;
+
+            padding: 30px;
+
+            border-radius: 12px;
+
+            box-shadow:
+                0 4px 20px rgba(0, 0, 0, 0.10);
+        }
+
+        .checkout-card h1,
+        .summary-card h2 {
+            margin-bottom: 25px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+
+            margin-bottom: 7px;
+
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+
+            padding: 12px;
+
+            border: 1px solid #ccc;
+
+            border-radius: 6px;
+
+            font-size: 16px;
+
+            box-sizing: border-box;
+        }
+
+        .form-group textarea {
+            min-height: 100px;
+
+            resize: vertical;
+        }
+
+        .payment-options {
+            display: flex;
+
+            gap: 15px;
+
+            flex-wrap: wrap;
+        }
+
+        .payment-option {
+            padding: 12px 18px;
+
+            border: 1px solid #ccc;
+
+            border-radius: 6px;
+
+            cursor: pointer;
+        }
+
+        .payment-option input {
+            margin-right: 6px;
+        }
+
+        .summary-row {
+            display: flex;
+
+            justify-content: space-between;
+
+            margin-bottom: 15px;
+        }
+
+        .summary-total {
+            display: flex;
+
+            justify-content: space-between;
+
+            font-size: 20px;
+
+            font-weight: bold;
+
+            padding-top: 15px;
+
+            border-top: 1px solid #ddd;
+        }
+
+        #checkoutSubtotal,
+        #checkoutDelivery,
+        #checkoutTotal {
+            color: #2e7d32;
+
+            font-weight: 600;
+        }
+
+        #checkoutTotal {
+            font-size: 22px;
+        }
+
+        .place-order-btn {
+            width: 100%;
+
+            margin-top: 25px;
+
+            padding: 14px;
+
+            border: none;
+
+            border-radius: 6px;
+
+            cursor: pointer;
+
+            font-size: 16px;
+
+            font-weight: 600;
+
+            background: #2e7d32;
+
+            color: white;
+
+            transition: 0.3s;
+        }
+
+        .place-order-btn:hover {
+            background: #1b5e20;
+        }
+
+        @media (max-width: 700px) {
+
+            .checkout-container {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+    <div class="container nav-container">
+
+        <a href="index.html" class="logo">
+            🛒 FreshMart
+        </a>
+
+
+        <nav class="nav-links">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="products.html">
+                Products
+            </a>
+
+            <a href="about.html">
+                About
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+        </nav>
+
+
+        <div class="nav-icons">
+
+            <a href="cart.html">
+
+                🛒
+
+                <span
+                    class="cart-count"
+                    id="cartCount">
+
+                    0
+
+                </span>
+
+            </a>
+
+
+            <a href="login.html">
+                👤
+            </a>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- ================= CHECKOUT ================= -->
+
+<main class="checkout-section">
+
+    <div class="checkout-container">
+
+
+        <!-- ================= CUSTOMER DETAILS ================= -->
+
+        <div class="checkout-card">
+
+            <h1>
+                Checkout
+            </h1>
+
+
+            <form id="checkoutForm">
+
+
+                <!-- FULL NAME -->
+
+                <div class="form-group">
+
+                    <label for="checkoutName">
+
+                        Full Name
+
+                    </label>
+
+
+                    <input
+                        type="text"
+                        id="checkoutName"
+                        placeholder="Enter your full name"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- EMAIL -->
+
+                <div class="form-group">
+
+                    <label for="checkoutEmail">
+
+                        Email
+
+                    </label>
+
+
+                    <input
+                        type="email"
+                        id="checkoutEmail"
+                        placeholder="Enter your email"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- PHONE -->
+
+                <div class="form-group">
+
+                    <label for="checkoutPhone">
+
+                        Phone Number
+
+                    </label>
+
+
+                    <input
+                        type="tel"
+                        id="checkoutPhone"
+                        placeholder="Enter your phone number"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- ADDRESS -->
+
+                <div class="form-group">
+
+                    <label for="checkoutAddress">
+
+                        Delivery Address
+
+                    </label>
+
+
+                    <textarea
+                        id="checkoutAddress"
+                        placeholder="Enter your delivery address"
+                        required
+                    ></textarea>
+
+                </div>
+
+
+                <!-- CITY -->
+
+                <div class="form-group">
+
+                    <label for="checkoutCity">
+
+                        City
+
+                    </label>
+
+
+                    <input
+                        type="text"
+                        id="checkoutCity"
+                        placeholder="Enter your city"
+                        required
+                    >
+
+                </div>
+
+                <!-- PINCODE -->
+
+<div class="form-group">
+
+    <label for="checkoutPincode">
+        Pincode
+    </label>
+
+    <input
+        type="text"
+        id="checkoutPincode"
+        placeholder="Enter your pincode"
+        maxlength="6"
+        required
+    >
+
+</div>
+                <!-- PAYMENT -->
+
+                <div class="form-group">
+
+                    <label>
+
+                        Payment Method
+
+                    </label>
+
+
+                    <div class="payment-options">
+
+
+                        <label class="payment-option">
+
+                            <input
+                                type="radio"
+                                name="payment"
+                                value="cod"
+                                checked
+                            >
+
+                            Cash on Delivery
+
+                        </label>
+
+
+                        <label class="payment-option">
+
+                            <input
+                                type="radio"
+                                name="payment"
+                                value="online"
+                            >
+
+                            Online Payment
+
+                        </label>
+
+
+                    </div>
+
+                </div>
+
+
+                <!-- PLACE ORDER -->
+
+                <button
+                    type="submit"
+                    class="place-order-btn">
+
+                    Place Order
+
+                </button>
+
+
+            </form>
+
+        </div>
+
+
+        <!-- ================= ORDER SUMMARY ================= -->
+
+        <div class="summary-card">
+
+            <h2>
+                Order Summary
+            </h2>
+
+
+            <div class="summary-row">
+
+                <span>
+                    Subtotal
+                </span>
+
+                <span id="checkoutSubtotal">
+                    ₹0
+                </span>
+
+            </div>
+
+
+            <div class="summary-row">
+
+                <span>
+                    Delivery
+                </span>
+
+                <span id="checkoutDelivery">
+                    ₹0
+                </span>
+
+            </div>
+
+
+            <div class="summary-total">
+
+                <span>
+                    Total
+                </span>
+
+                <span id="checkoutTotal">
+                    ₹0
+                </span>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</main>
+
+
+<!-- ================= CHECKOUT JAVASCRIPT ================= -->
+
+
+
+<script src="../JAVASCRIPT/checkout.js"></script>
+
+
+</body>
+
+</html>

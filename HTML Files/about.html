@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>FreshMart - About Us</title>
+
+    <link rel="stylesheet"
+          href="../CSS/style.css">
+
+    <style>
+
+        .about-section {
+            padding: 60px 20px;
+            min-height: 70vh;
+        }
+
+        .about-container {
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .about-header {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .about-header h1 {
+            margin-bottom: 15px;
+        }
+
+        .about-header p {
+            max-width: 700px;
+            margin: auto;
+            line-height: 1.7;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .about-card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.10);
+        }
+
+        .about-card .icon {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        .about-card h2 {
+            margin-bottom: 12px;
+        }
+
+        .about-card p {
+            line-height: 1.6;
+        }
+
+        .mission {
+            margin-top: 40px;
+            padding: 35px;
+            background: white;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.10);
+        }
+
+        .mission h2 {
+            margin-bottom: 15px;
+        }
+
+        .mission p {
+            line-height: 1.7;
+        }
+
+        @media (max-width: 700px) {
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar">
+
+        <div class="container nav-container">
+
+            <a href="index.html" class="logo">
+                🛒 FreshMart
+            </a>
+
+            <nav class="nav-links">
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="products.html">
+                    Products
+                </a>
+
+                <a href="about.html"
+                   class="active">
+                    About
+                </a>
+
+                <a href="contact.html">
+                    Contact
+                </a>
+
+            </nav>
+
+            <div class="nav-icons">
+
+                <a href="cart.html">
+                    🛒
+                    <span class="cart-count" id="cartCount">0</span>
+                </a>
+
+                <div class="user-menu">
+
+                <a href="login.html" id="userIcon">
+                    👤
+                 </a>
+
+                 <button
+                    id="logoutBtn"
+                    style="display: none;">
+                    Logout
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= ABOUT SECTION ================= -->
+
+    <main class="about-section">
+
+        <div class="about-container">
+
+            <div class="about-header">
+
+                <h1>
+                    About FreshMart
+                </h1>
+
+                <p>
+                    FreshMart is a simple and convenient online
+                    grocery shopping platform designed to make
+                    everyday grocery shopping easier.
+                </p>
+
+            </div>
+
+
+            <div class="about-grid">
+
+
+                <!-- CARD 1 -->
+
+                <div class="about-card">
+
+                    <div class="icon">
+                        🥬
+                    </div>
+
+                    <h2>
+                        Fresh Products
+                    </h2>
+
+                    <p>
+                        We provide a wide range of everyday
+                        groceries including fruits, vegetables,
+                        dairy products and more.
+                    </p>
+
+                </div>
+
+
+                <!-- CARD 2 -->
+
+                <div class="about-card">
+
+                    <div class="icon">
+                        🚚
+                    </div>
+
+                    <h2>
+                        Easy Delivery
+                    </h2>
+
+                    <p>
+                        Our platform makes it easy for customers
+                        to select their groceries and prepare
+                        their orders for convenient delivery.
+                    </p>
+
+                </div>
+
+
+                <!-- CARD 3 -->
+
+                <div class="about-card">
+
+                    <div class="icon">
+                        💚
+                    </div>
+
+                    <h2>
+                        Customer First
+                    </h2>
+
+                    <p>
+                        We focus on creating a simple,
+                        user-friendly shopping experience for
+                        every customer.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= MISSION ================= -->
+
+            <div class="mission">
+
+                <h2>
+                    Our Mission
+                </h2>
+
+                <p>
+                    Our mission is to make grocery shopping
+                    simple, convenient and accessible through
+                    technology while providing customers with
+                    an easy online shopping experience.
+                </p>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+    <script src="../JAVASCRIPT/script.js"></script>
+    <script src="../JAVASCRIPT/auth.js"></script>
+
+</body>
+
+</html>

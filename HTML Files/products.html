@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FreshMart - Products</title>
+
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="../CSS/home.css">
+    <link rel="stylesheet" href="../CSS/products.css">
+</head>
+
+<body>
+
+<header class="navbar">
+
+    <div class="container nav-container">
+
+        <a href="index.html" class="logo nav-item">
+            🛒 FreshMart
+        </a>
+
+        <nav class="nav-links">
+
+            <a href="index.html" class="nav-item">
+                🏠 Home
+            </a>
+
+            <a href="products.html" class="nav-item active">
+                🛍️ Products
+            </a>
+
+            <a href="about.html" class="nav-item">
+                ℹ️ About
+            </a>
+
+            <a href="contact.html" class="nav-item">
+                📞 Contact
+            </a>
+
+        </nav>
+
+        <a href="wishlist.html" class="nav-item">
+            ❤️ Wishlist
+        </a>
+
+        <div class="nav-icons">
+
+            <a href="cart.html" class="nav-item cart-box">
+                🛒
+                <span class="cart-count" id="cartCount">0</span>
+            </a>
+
+            <a href="login.html" id="userIcon" class="nav-item">
+                👤 Login
+            </a>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<section class="page-header">
+
+    <div class="container">
+
+        <h1>Our Products</h1>
+
+        <p>
+            Fresh products for your everyday needs
+        </p>
+
+    </div>
+
+</section>
+
+
+<section class="section">
+
+    <div class="container">
+
+        <!-- SEARCH -->
+
+        <div class="search-filter">
+
+            <input
+                type="text"
+                id="searchInput"
+                class="search-box"
+                placeholder="Search for products..."
+            >
+
+        </div>
+
+
+        <!-- FILTER -->
+
+        <div class="filter-buttons">
+
+            <button type="button"
+                    class="filter-btn active"
+                    onclick="filterProducts('all')">
+                All
+            </button>
+
+            <button type="button"
+                    class="filter-btn"
+                    onclick="filterProducts('fruit')">
+                Fruits
+            </button>
+
+            <button type="button"
+                    class="filter-btn"
+                    onclick="filterProducts('vegetable')">
+                Vegetables
+            </button>
+
+            <button type="button"
+                    class="filter-btn"
+                    onclick="filterProducts('dairy')">
+                Dairy
+            </button>
+
+            <button type="button"
+                    class="filter-btn"
+                    onclick="filterProducts('grocery')">
+                Groceries
+            </button>
+
+        </div>
+
+
+        <!-- PRODUCTS -->
+
+        <div class="product-grid" id="productGrid">
+
+
+            <!-- APPLE -->
+
+            <div class="product-card" data-category="fruit">
+
+                <div class="product-image">
+                    <img
+                        src="../IMAGES/products/apple.png"
+                        alt="Fresh Apple">
+                </div>
+
+                <div class="product-info">
+
+                    <h3>Apple</h3>
+
+                    <p class="product-category">
+                        Fresh Fruits
+                    </p>
+
+                    <span class="product-price">
+                        ₹130 / kg
+                    </span>
+
+                    <div class="product-actions">
+
+                        <button type="button"
+                                class="wishlist">
+                            ♡
+                        </button>
+
+                        <button
+                            type="button"
+                            class="add-cart"
+                            onclick="addToCart('apple001', 'Apple', 130, 'apple.png')">
+                            Add to Cart
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- BANANA -->
+
+            <div class="product-card" data-category="fruit">
+
+                <div class="product-image">
+                    🍌
+                </div>
+
+                <div class="product-info">
+
+                    <h3>Banana</h3>
+
+                    <p class="product-category">
+                        Fresh Fruits
+                    </p>
+
+                    <span class="product-price">
+                        ₹60 / dozen
+                    </span>
+
+                    <div class="product-actions">
+
+                        <button type="button"
+                                class="wishlist">
+                            ♡
+                        </button>
+
+                        <button
+                            type="button"
+                            class="add-cart"
+                            onclick="addToCart('banana001', 'Banana', 60, '')">
+                            Add to Cart
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ORANGE -->
+
+            <div class="product-card" data-category="fruit">
+
+                <div class="product-image">
+                    🍊
+                </div>
+
+                <div class="product-info">
+
+                    <h3>Orange</h3>
+
+                    <p class="product-category">
+                        Fresh Fruits
+                    </p>
+
+                    <span class="product-price">
+                        ₹90 / kg
+                    </span>
+
+                    <div class="product-actions">
+
+                        <button type="button"
+                                class="wishlist">
+                            ♡
+                        </button>
+
+                        <button
+                            type="button"
+                            class="add-cart"
+                            onclick="addToCart('orange001', 'Orange', 90, '')">
+                            Add to Cart
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- CARROT -->
+
+            <div class="product-card" data-category="vegetable">
+
+                <div class="product-image">
+                    🥕
+                </div>
+
+                <div class="product-info">
+
+                    <h3>Carrot</h3>
+
+                    <p class="product-category">
+                        Vegetables
+                    </p>
+
+                    <span class="product-price">
+                        ₹70 / kg
+                    </span>
+
+                    <div class="product-actions">
+
+                        <button type="button"
+                                class="wishlist">
+                            ♡
+                        </button>
+
+                        <button
+                            type="button"
+                            class="add-cart"
+                            onclick="addToCart('carrot001', 'Carrot', 70, '')">
+                            Add to Cart
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- TOMATO -->
+
+            <div class="product-card" data-category="vegetable">
+
+                <div class="product-image">
+                    🍅
+                </div>
+
+                <div class="product-info">
+
+                    <h3>Tomato</h3>
+
+                    <p class="product-category">
+                        Vegetables
+                    </p>
+
+                    <span class="product-price">
+                        ₹45 / kg
+                    </span>
+
+                    <div class="product-actions">
+
+                        <button type="button"
+                                class="wishlist">
+                            ♡
+                        </button>
+
+                        <button
+                            type="button"
+                            class="add-cart"
+                            onclick="addToCart('tomato001', 'Tomato', 45, '')">
+                            Add to Cart
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- POTATO -->
+
+            <div class="product-card" data-category="vegetable">
+
+                <div class="product-image">
+                    🥔
+                </div>
+
+                <div class="product-info">
+
+                    <h3>Potato</h3>
+
+                    <p class="product-category">
+                        Vegetables
+                    </p>
+
+                    <span class="product-price">
+                        ₹40 / kg
+                    </span>
+
+                    <div class="product-actions">
+
+                        <button type="button"
+                                class="wishlist">
+                            ♡
+                        </button>
+
+                        <button
+                            type="button"
+                            class="add-cart"
+                            onclick="addToCart('potato001', 'Potato', 40, '')">
+                            Add to Cart
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- MILK -->
+
+            <div class="product-card" data-category="dairy">
+
+                <div class="product-image">
+                    🥛
+                </div>
+
+                <div class="product-info">
+
+                    <h3>Milk</h3>
+
+                    <p class="product-category">
+                        Dairy
+                    </p>
+
+                    <span class="product-price">
+                        ₹65 / litre
+                    </span>
+
+                    <div class="product-actions">
+
+                        <button type="button"
+                                class="wishlist">
+                            ♡
+                        </button>
+
+                        <button
+                            type="button"
+                            class="add-cart"
+                            onclick="addToCart('milk001', 'Milk', 65, '')">
+                            Add to Cart
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ONION -->
+
+            <div class="product-card" data-category="vegetable">
+
+                <div class="product-image">
+                    🧅
+                </div>
+
+                <div class="product-info">
+
+                    <h3>Onion</h3>
+
+                    <p class="product-category">
+                        Vegetables
+                    </p>
+
+                    <span class="product-price">
+                        ₹50 / kg
+                    </span>
+
+                    <div class="product-actions">
+
+                        <button type="button"
+                                class="wishlist">
+                            ♡
+                        </button>
+
+                        <button
+                            type="button"
+                            class="add-cart"
+                            onclick="addToCart('onion001', 'Onion', 50, '')">
+                            Add to Cart
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- MANGO -->
+
+            <div class="product-card" data-category="fruit">
+
+                <div class="product-image">
+                    🥭
+                </div>
+
+                <div class="product-info">
+
+                    <h3>Mango</h3>
+
+                    <p class="product-category">
+                        Fresh Fruits
+                    </p>
+
+                    <span class="product-price">
+                        ₹100 / kg
+                    </span>
+
+                    <div class="product-actions">
+
+                        <button type="button"
+                                class="wishlist">
+                            ♡
+                        </button>
+
+                        <button
+                            type="button"
+                            class="add-cart"
+                            onclick="addToCart('mango001', 'Mango', 100, '')">
+                            Add to Cart
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- BREAD -->
+
+            <div class="product-card" data-category="grocery">
+
+                <div class="product-image">
+                    🍞
+                </div>
+
+                <div class="product-info">
+
+                    <h3>Bread</h3>
+
+                    <p class="product-category">
+                        Groceries
+                    </p>
+
+                    <span class="product-price">
+                        ₹45 / pack
+                    </span>
+
+                    <div class="product-actions">
+
+                        <button type="button"
+                                class="wishlist">
+                            ♡
+                        </button>
+
+                        <button
+                            type="button"
+                            class="add-cart"
+                            onclick="addToCart('bread001', 'Bread', 45, '')">
+                            Add to Cart
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- EGGS -->
+
+            <div class="product-card" data-category="dairy">
+
+                <div class="product-image">
+                    🥚
+                </div>
+
+                <div class="product-info">
+
+                    <h3>Eggs</h3>
+
+                    <p class="product-category">
+                        Dairy
+                    </p>
+
+                    <span class="product-price">
+                        ₹90 / dozen
+                    </span>
+
+                    <div class="product-actions">
+
+                        <button type="button"
+                                class="wishlist">
+                            ♡
+                        </button>
+
+                        <button
+                            type="button"
+                            class="add-cart"
+                            onclick="addToCart('eggs001', 'Eggs', 90, '')">
+                            Add to Cart
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- RICE -->
+
+            <div class="product-card" data-category="grocery">
+
+                <div class="product-image">
+                    🍚
+                </div>
+
+                <div class="product-info">
+
+                    <h3>Rice</h3>
+
+                    <p class="product-category">
+                        Groceries
+                    </p>
+
+                    <span class="product-price">
+                        ₹80 / kg
+                    </span>
+
+                    <div class="product-actions">
+
+                        <button type="button"
+                                class="wishlist">
+                            ♡
+                        </button>
+
+                        <button
+                            type="button"
+                            class="add-cart"
+                            onclick="addToCart('rice001', 'Rice', 80, '')">
+                            Add to Cart
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<script src="../JAVASCRIPT/products.js"></script>
+
+</body>
+
+</html>

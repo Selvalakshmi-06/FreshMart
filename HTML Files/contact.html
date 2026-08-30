@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>FreshMart - Contact</title>
+
+    <link rel="stylesheet"
+          href="../CSS/style.css">
+
+    <style>
+
+        .contact-section {
+            min-height: 70vh;
+            padding: 50px 20px;
+        }
+
+        .contact-container {
+            max-width: 1000px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .contact-info,
+        .contact-form {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.10);
+        }
+
+        .contact-info h1,
+        .contact-form h2 {
+            margin-bottom: 15px;
+        }
+
+        .contact-info p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .contact-item {
+            margin-bottom: 20px;
+        }
+
+        .contact-item strong {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 7px;
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .contact-btn {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        @media (max-width: 700px) {
+
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar">
+
+        <div class="container nav-container">
+
+            <a href="index.html" class="logo">
+                🛒 FreshMart
+            </a>
+
+            <nav class="nav-links">
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="products.html">
+                    Products
+                </a>
+
+                <a href="about.html">
+                    About
+                </a>
+
+                <a href="contact.html"
+                   class="active">
+                    Contact
+                </a>
+
+            </nav>
+
+            <div class="nav-icons">
+
+                <a href="cart.html">
+                    🛒
+                    <span class="cart-count" id="cartCount">0</span>
+                </a>
+
+                <a href="login.html">
+                    👤
+                </a>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= CONTACT SECTION ================= -->
+
+    <main class="contact-section">
+
+        <div class="contact-container">
+
+            <div class="contact-info">
+
+                <h1>Contact FreshMart</h1>
+
+                <p>
+                    Have a question, suggestion, or need help
+                    with your order? We'd love to hear from you.
+                </p>
+
+
+                <div class="contact-item">
+
+                    <strong>📧 Email</strong>
+
+                    <span>
+                        support@freshmart.com
+                    </span>
+
+                </div>
+
+
+                <div class="contact-item">
+
+                    <strong>📞 Phone</strong>
+
+                    <span>
+                        +91 98765 43210
+                    </span>
+
+                </div>
+
+
+                <div class="contact-item">
+
+                    <strong>📍 Address</strong>
+
+                    <span>
+                        Chennai, Tamil Nadu, India
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="contact-form">
+
+                <h2>Send us a Message</h2>
+
+                <form id="contactForm">
+
+                    <div class="form-group">
+
+                        <label for="contactName">
+                            Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="contactName"
+                            placeholder="Enter your name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="contactEmail">
+                            Email
+                        </label>
+
+                        <input
+                            type="email"
+                            id="contactEmail"
+                            placeholder="Enter your email"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="contactMessage">
+                            Message
+                        </label>
+
+                        <textarea
+                            id="contactMessage"
+                            placeholder="Write your message"
+                            required
+                        ></textarea>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="contact-btn">
+
+                        Send Message
+
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script src="../JAVASCRIPT/auth.js"></script>
+
+    <script>
+
+        const contactForm =
+            document.getElementById("contactForm");
+
+        if (contactForm) {
+
+            contactForm.addEventListener(
+                "submit",
+                function (event) {
+
+                    event.preventDefault();
+
+                    alert(
+                        "Thank you! Your message has been sent."
+                    );
+
+                    contactForm.reset();
+
+                }
+            );
+
+        }
+
+    </script>
+<!-- ================= JAVASCRIPT ================= -->
+
+<script src="../JAVASCRIPT/script.js"></script>
+<script src="../JAVASCRIPT/auth.js"></script>
+
+</body>
+
+</html>

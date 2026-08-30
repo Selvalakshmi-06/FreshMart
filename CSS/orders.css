@@ -1,0 +1,103 @@
+/* ========================================
+   FRESHMART - ORDERS PAGE
+======================================== */
+
+.orders-section {
+    width: 90%;
+    max-width: 1100px;
+    margin: 50px auto;
+}
+
+.orders-section h1 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.orders-subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 35px;
+}
+
+.order-card {
+    background: #fff;
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.order-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+.order-header h2 {
+    font-size: 18px;
+    margin: 0 0 5px;
+}
+
+.order-header p {
+    color: #777;
+    font-size: 13px;
+    margin: 0;
+}
+
+.order-status {
+    padding: 7px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.order-products {
+    margin-bottom: 20px;
+}
+
+.order-product {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.order-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.order-footer strong {
+    font-size: 18px;
+}
+
+.order-footer p {
+    margin: 8px 0 0;
+    color: #666;
+}
+
+.cancel-btn {
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.orders-message {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.orders-message a {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 8px;
+}

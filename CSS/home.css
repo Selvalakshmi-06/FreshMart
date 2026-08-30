@@ -1,0 +1,678 @@
+/* =========================================
+   FRESHMART HOME PAGE
+========================================= */
+
+/* HERO */
+
+.hero {
+    background: linear-gradient(135deg, #effaf0, #fff8e8);
+    overflow: hidden;
+}
+
+.hero-container {
+    min-height: 560px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    align-items: center;
+    gap: 50px;
+}
+
+/* HERO TEXT */
+
+.hero-badge {
+    display: inline-block;
+
+    background: #e1f4e5;
+    color: #176b3a;
+
+    padding: 9px 16px;
+
+    border-radius: 30px;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    margin-bottom: 18px;
+}
+
+.hero-content h1 {
+    font-size: 58px;
+    line-height: 1.05;
+
+    color: #183b25;
+
+    margin-bottom: 20px;
+}
+
+.hero-content h1 span {
+    color: #f28c28;
+}
+
+.hero-content p {
+    max-width: 540px;
+
+    font-size: 18px;
+    line-height: 1.7;
+
+    color: #657067;
+
+    margin-bottom: 30px;
+}
+
+
+/* BUTTONS */
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+
+    flex-wrap: wrap;
+}
+
+.hero-buttons .btn {
+    display: inline-flex;
+
+    align-items: center;
+    gap: 10px;
+
+    transition: 0.3s ease;
+}
+
+.hero-buttons .btn:hover {
+    transform: translateY(-3px);
+}
+
+
+/* HERO FEATURES */
+
+.hero-features {
+    display: flex;
+
+    gap: 22px;
+
+    margin-top: 32px;
+
+    flex-wrap: wrap;
+}
+
+.hero-features div {
+    display: flex;
+
+    align-items: center;
+    gap: 7px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    color: #536058;
+}
+
+
+/* HERO IMAGE */
+
+.hero-image {
+    min-height: 430px;
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-image::before {
+    content: "";
+
+    width: 400px;
+    height: 400px;
+
+    position: absolute;
+
+    background: #dff2df;
+
+    border-radius: 50%;
+
+    z-index: 0;
+}
+
+
+/* MAIN GROCERY IMAGE */
+
+.hero-image > img {
+    width: 220px;
+    height: 220px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border: 10px solid white;
+
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12);
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* FLOATING ICONS */
+
+.hero-floating-icon {
+    position: absolute;
+
+    width: 65px;
+    height: 65px;
+
+    background: white;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 32px;
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+
+    z-index: 3;
+
+    animation: groceryFloat 4s ease-in-out infinite;
+}
+/* =========================================
+   PERFECT GROCERY CIRCLE
+========================================= */
+
+.grocery-1 {
+    top: -5px;
+    left: 50%;
+    margin-left: -32px;
+}
+
+.grocery-2 {
+    top: 25px;
+    right: 85px;
+}
+
+.grocery-3 {
+    top: 105px;
+    right: 15px;
+}
+
+.grocery-4 {
+    top: 215px;
+    right: 15px;
+}
+
+.grocery-5 {
+    bottom: 35px;
+    right: 75px;
+}
+
+.grocery-6 {
+    bottom: -5px;
+    left: 50%;
+    margin-left: -32px;
+}
+
+.grocery-7 {
+    bottom: 35px;
+    left: 75px;
+}
+
+.grocery-8 {
+    top: 215px;
+    left: 15px;
+}
+
+.grocery-9 {
+    top: 105px;
+    left: 15px;
+}
+
+.grocery-10 {
+    top: 25px;
+    left: 85px;
+}
+
+/* FLOATING ANIMATION */
+
+@keyframes floatingIcon {
+
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-9px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================================
+   CATEGORY SECTION
+========================================= */
+
+#categories {
+    background: #ffffff;
+}
+
+#categories .category-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 22px;
+}
+
+#categories .category-card {
+    background: #f8fbf8;
+
+    border: 1px solid #edf2ed;
+
+    border-radius: 20px;
+
+    padding: 30px 20px;
+
+    text-align: center;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+#categories .category-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow: 0 15px 35px rgba(35, 90, 45, 0.12);
+
+    background: white;
+}
+
+#categories .category-icon {
+    width: 85px;
+    height: 85px;
+
+    margin: 0 auto 15px;
+
+    border-radius: 50%;
+
+    background: #eaf7ec;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 43px;
+
+    transition: 0.3s ease;
+}
+
+#categories .category-card:hover .category-icon {
+    transform: scale(1.1);
+}
+
+#categories .category-card h3 {
+    color: #23432c;
+
+    font-size: 18px;
+}
+
+
+/* =========================================
+   WHY CHOOSE US
+========================================= */
+
+.hero ~ .section .category-card {
+    border-radius: 18px;
+
+    transition: 0.3s ease;
+}
+
+.hero ~ .section .category-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+
+/* =========================================
+   HOME RESPONSIVE
+========================================= */
+
+@media (max-width: 850px) {
+
+    .hero-container {
+        grid-template-columns: 1fr;
+
+        text-align: center;
+
+        padding: 50px 20px;
+    }
+
+    .hero-content p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-features {
+        justify-content: center;
+    }
+
+    .hero-image {
+        min-height: 350px;
+    }
+
+    .hero-image::before {
+        width: 320px;
+        height: 320px;
+    }
+
+    .hero-image > img {
+        width: 240px;
+        height: 240px;
+    }
+
+    #categories .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+@media (max-width: 500px) {
+
+    .hero-content h1 {
+        font-size: 40px;
+    }
+
+    .hero-image::before {
+        width: 280px;
+        height: 280px;
+    }
+
+    .hero-image > img {
+        width: 210px;
+        height: 210px;
+    }
+
+    .hero-floating-icon {
+        width: 55px;
+        height: 55px;
+
+        font-size: 27px;
+    }
+
+    #categories .category-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+/* =========================================
+   CATEGORY ICON DESIGN
+========================================= */
+
+#categories .category-icon {
+    width: 95px;
+    height: 95px;
+
+    margin: 0 auto 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: linear-gradient(135deg, #e8f8e9, #fff4d9);
+
+    font-size: 48px;
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+
+    transition: all 0.3s ease;
+}
+
+#categories .category-card:hover .category-icon {
+    transform: scale(1.15) rotate(5deg);
+
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+}
+
+#categories .category-card {
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+#categories .category-card:hover {
+    transform: translateY(-10px);
+}
+/* =========================================
+   FRESHMART NAVIGATION BOXES
+   ========================================= */
+
+.navbar .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+
+/* Each navigation item gets its own box */
+
+.navbar .nav-links .nav-item {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 12px 22px;
+
+    background-color: #f1f8e9;
+
+    border: 1px solid #d5e8c8;
+
+    border-radius: 10px;
+
+    color: #2e7d32;
+
+    font-size: 18px;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition: all 0.3s ease;
+}
+
+
+/* Hover effect */
+
+.navbar .nav-links .nav-item:hover {
+    background-color: #4caf50;
+
+    color: white;
+
+    border-color: #4caf50;
+
+    transform: translateY(-2px);
+}
+
+
+/* Home - currently selected */
+
+.navbar .nav-links .nav-item.active {
+    background-color: #4caf50;
+
+    color: white;
+
+    border-color: #4caf50;
+}
+/* =========================================
+   FRESHMART NAVBAR BOX DESIGN
+   ========================================= */
+
+.navbar .nav-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+
+/* ALL NAVIGATION BOXES */
+
+.navbar .nav-item {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 48px;
+
+    padding: 0 18px;
+
+    background-color: #ffffff;
+
+    border: 2px solid #d8ead0;
+
+    border-radius: 12px;
+
+    color: #2e7d32;
+
+    font-size: 18px;
+
+    font-weight: 600;
+
+    text-decoration: none;
+
+    box-sizing: border-box;
+
+    transition: 0.3s ease;
+}
+
+
+/* FRESHMART BOX */
+
+.navbar .logo {
+    font-size: 22px;
+
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+
+/* HOME / PRODUCTS / ABOUT / CONTACT */
+
+.navbar .nav-links {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    flex: 1;
+
+    justify-content: center;
+}
+
+
+/* HOVER */
+
+.navbar .nav-item:hover {
+    background-color: #f1f8e9;
+
+    border-color: #4caf50;
+
+    color: #2e7d32;
+
+    transform: translateY(-2px);
+}
+
+
+/* ACTIVE HOME */
+
+.navbar .nav-item.active {
+    background-color: #4caf50;
+
+    border-color: #4caf50;
+
+    color: white;
+}
+
+
+/* CART + LOGIN AREA */
+
+.navbar .nav-icons {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+
+/* CART BOX */
+
+.navbar .cart-box {
+    min-width: 58px;
+
+    position: relative;
+
+    gap: 5px;
+}
+
+
+/* CART NUMBER */
+
+.navbar .cart-count {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-width: 22px;
+
+    height: 22px;
+
+    padding: 0 5px;
+
+    background-color: #ff9800;
+
+    color: white;
+
+    border-radius: 50%;
+
+    font-size: 13px;
+
+    font-weight: bold;
+}
+
+
+/* LOGIN BOX */
+
+.navbar .user-menu {
+    display: flex;
+
+    align-items: center;
+}
+
+
+.navbar .user-menu .nav-item {
+    white-space: nowrap;
+}
