@@ -41,7 +41,7 @@ if (registerForm) {
         try {
 
             const response = await fetch(
-                "http://localhost:5000/api/register",
+                "https://freshmart-qzx3.onrender.com/api/register",
                 {
                     method: "POST",
 
@@ -114,7 +114,7 @@ if (loginForm) {
         try {
 
             const response = await fetch(
-                "http://localhost:5000/api/login",
+                "https://freshmart-qzx3.onrender.com/api/login",
                 {
                     method: "POST",
 

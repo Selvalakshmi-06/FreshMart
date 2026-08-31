@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 const response =
                     await fetch(
-                        "http://localhost:5000/api/login",
+                        "https://freshmart-qzx3.onrender.com/api/login",
                         {
                             method: "POST",
 

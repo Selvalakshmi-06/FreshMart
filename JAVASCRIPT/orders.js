@@ -54,7 +54,7 @@ async function loadOrders() {
 
         const response =
             await fetch(
-                "http://localhost:5000/api/orders",
+                "https://freshmart-qzx3.onrender.com/api/orders",
                 {
                     method: "GET",
 
@@ -277,7 +277,7 @@ async function cancelOrder(orderId) {
 
         const response =
             await fetch(
-                "http://localhost:5000/api/orders/" +
+                "https://freshmart-qzx3.onrender.com/api/orders/" +
                 orderId +
                 "/cancel",
                 {

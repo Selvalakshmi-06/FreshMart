@@ -2,7 +2,7 @@
 // FRESHMART - PRODUCTS
 // ========================================
 
-const API_URL = "http://localhost:5000";
+const API_URL = "https://freshmart-qzx3.onrender.com";
 
 // ========================================
 // GET TOKEN
