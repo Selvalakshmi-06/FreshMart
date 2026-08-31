@@ -1,9 +1,9 @@
 const mongoose = require("mongoose");
-const Product = require("./models/Product");
+const Product = require("./models/product");
+require("dotenv").config();
 
-mongoose.connect("mongodb://127.0.0.1:27017/FreshMartDB")
-    .then(async () => {
-
+mongoose.connect(process.env.MONGO_URI)
+     .then(async() => {
         console.log("MongoDB connected!");
 
         const products = [

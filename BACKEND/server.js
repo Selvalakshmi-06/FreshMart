@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
-
+require("dotenv").config();
 const User = require("./models/User");
 const Cart = require("./models/Cart");
 const Order = require("./models/Order");
@@ -11,8 +11,11 @@ const Product = require("./models/Product");
 const Wishlist = require("./models/Wishlist");
 const app = express();
 
-const PORT = 5000;
-const JWT_SECRET = "freshmart_secret_key";
+const PORT = process.env.PORT || 5000;
+
+const JWT_SECRET = process.env.JWT_SECRET;
+
+
 
 // =========================================
 // MIDDLEWARE
@@ -26,7 +29,7 @@ app.use(cors());
 // =========================================
 
 mongoose
-    .connect("mongodb://127.0.0.1:27017/FreshMartDB")
+    .connect(process.env.MONGO_URI)
     .then(() => {
         console.log("MongoDB connected successfully!");
     })
@@ -1485,7 +1488,7 @@ app.delete(
             res.status(200).json({
                 message: "Product deleted successfully"
             });
-res.status
+
         } catch (error) {
 
             res.status(500).json({
