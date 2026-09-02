@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>FreshMart - Grocery Store</title>
+<link rel="stylesheet" href="CSS/style.css">
+        <link rel="stylesheet" 
+          href="CSS/home.css"> 
+
+</head>
+
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+    <div class="container nav-container">
+
+        <!-- FreshMart -->
+
+        <a href="index.html" class="logo nav-item">
+            🛒 FreshMart
+        </a>
+
+
+        <!-- Navigation -->
+
+        <nav class="nav-links">
+
+            <a href="index.html" class="nav-item active">
+                🏠 Home
+            </a>
+
+            <a href="products.html" class="nav-item">
+                🛍️ Products
+            </a>
+
+            <a href="about.html" class="nav-item">
+                ℹ️ About
+            </a>
+
+            <a href="contact.html" class="nav-item">
+                📞 Contact
+            </a>
+            <a href="orders.html" class="nav-item">
+                📦 My Orders
+            </a>
+        </nav>
+
+
+        <!-- Cart and Login -->
+
+        <div class="nav-icons">
+
+            <a href="cart.html" class="nav-item cart-box">
+
+                🛒
+
+                <span class="cart-count" id="cartCount">
+                    0
+                </span>
+
+            </a>
+
+
+            <div class="user-menu">
+
+                <a href="login.html"
+                   id="userIcon"
+                   class="nav-item">
+
+                    👤 Login
+
+                </a>
+
+
+                <button
+                    id="logoutBtn"
+                    style="display: none;">
+
+                    Logout
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+    <div class="container hero-container">
+
+        <div class="hero-content">
+
+            <div class="hero-badge">
+                🌱 FRESH • LOCAL • AFFORDABLE
+            </div>
+
+            <h1>
+                Fresh groceries,
+                <br>
+                <span>happy homes.</span>
+            </h1>
+
+            <p>
+                Everything your kitchen needs, from fresh fruits
+                and vegetables to everyday essentials — all in one place.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="products.html"
+                   class="btn btn-primary">
+
+                    🛒 Shop Fresh Now
+
+                    <span>→</span>
+
+                </a>
+
+                <a href="#categories"
+                   class="btn btn-secondary">
+
+                    Explore Categories
+
+                    <span>↓</span>
+
+                </a>
+
+            </div>
+
+            <div class="hero-features">
+
+                <div>
+                    🚚
+                    <span>Fast Delivery</span>
+                </div>
+
+                <div>
+                    🌿
+                    <span>Fresh Products</span>
+                </div>
+
+                <div>
+                    💚
+                    <span>Trusted Service</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    <div class="hero-image">
+        <!-- Grocery Collage inside the main circle -->
+        <img src="IMAGES/products/grocery.jpg"
+            alt="Fresh Grocery Collection">
+
+    
+
+<!-- Floating groceries outside the circle -->
+
+<div class="hero-floating-icon grocery-1">
+    🍌
+</div>
+
+<div class="hero-floating-icon grocery-2">
+    🍅
+</div>
+
+<div class="hero-floating-icon grocery-3">
+    🥕
+</div>
+
+<div class="hero-floating-icon grocery-4">
+    🥛
+</div>
+
+<div class="hero-floating-icon grocery-5">
+    🥔
+</div>
+
+<div class="hero-floating-icon grocery-6">
+    🧅
+</div>
+
+<div class="hero-floating-icon grocery-7">
+    🍚
+</div>
+
+<div class="hero-floating-icon grocery-8">
+    🌽
+</div>
+
+<div class="hero-floating-icon grocery-9">
+    🍳
+</div>
+
+<div class="hero-floating-icon grocery-10">
+    🍈
+</div>
+</div>
+</div>
+</section>
+<!-- ================= CATEGORIES ================= -->
+
+<section class="section"
+         id="categories">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>
+                Shop By Category
+            </h2>
+
+            <p>
+                Everything you need for your kitchen
+            </p>
+
+        </div>
+
+
+        <div class="category-grid">
+
+            <div class="category-card">
+
+                <div class="category-icon">
+                    🍎
+                </div>
+
+                <h3>
+                    Fruits
+                </h3>
+
+            </div>
+
+
+            <div class="category-card">
+
+                <div class="category-icon">
+                    🥕
+                </div>
+
+                <h3>
+                    Vegetables
+                </h3>
+
+            </div>
+
+
+            <div class="category-card">
+
+                <div class="category-icon">
+                    🥛
+                </div>
+
+                <h3>
+                    Dairy
+                </h3>
+
+            </div>
+
+
+            <div class="category-card">
+
+                <div class="category-icon">
+                    🍚
+                </div>
+
+                <h3>
+                    Groceries
+                </h3>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= WHY US ================= -->
+
+<section class="section"
+         style="background:#f7faf7;">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>
+                Why Choose FreshMart?
+            </h2>
+
+        </div>
+
+
+        <div class="category-grid">
+
+            <div class="category-card">
+
+                <div class="category-icon">
+                    🚚
+                </div>
+
+                <h3>
+                    Fast Delivery
+                </h3>
+
+                <p>
+                    Get your groceries delivered quickly.
+                </p>
+
+            </div>
+
+
+            <div class="category-card">
+
+                <div class="category-icon">
+                    🌱
+                </div>
+
+                <h3>
+                    Fresh Products
+                </h3>
+
+                <p>
+                    Quality products selected with care.
+                </p>
+
+            </div>
+
+
+            <div class="category-card">
+
+                <div class="category-icon">
+                    💳
+                </div>
+
+                <h3>
+                    Easy Payment
+                </h3>
+
+                <p>
+                    Simple and convenient checkout.
+                </p>
+
+            </div>
+
+
+            <div class="category-card">
+
+                <div class="category-icon">
+                    ⭐
+                </div>
+
+                <h3>
+                    Great Service
+                </h3>
+
+                <p>
+                    Customer satisfaction is our priority.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+
+<script src="JAVASCRIPT/script.js"></script>
+<script src="JAVASCRIPT/auth.js"></script>
+</body>
+
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FreshMart</title>
+
+    <meta http-equiv="refresh" content="0; url=HTML%20Files/index.html">
+</head>
+
+<body>
+    <p>Redirecting to FreshMart...</p>
+
+    <script>
+        window.location.href = "HTML%20Files/index.html";
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FreshMart</title>
+</head>
+<body>
+    <script>
+        window.location.href = "HTML%20Files/index.html";
+    </script>
+</body>
+</html>
