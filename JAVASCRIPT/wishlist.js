@@ -1,202 +1,166 @@
+
 // ========================================
-// FRESHMART - USER WISHLIST
+// FRESHMART - WISHLIST
+// MongoDB / Backend Version
 // ========================================
 
-
-// ----------------------------------------
-// CURRENT USER
-// ----------------------------------------
-
-const currentUser =
-    localStorage.getItem("freshmartUser");
-
-const wishlistKey = currentUser
-    ? "freshmartWishlist_" +
-      currentUser.replace(/[^a-zA-Z0-9]/g, "_")
-    : "freshmartWishlist_guest";
+const API_URL = "https://freshmart-qzx3.onrender.com";
 
 
-// ----------------------------------------
-// LOAD USER WISHLIST
-// ----------------------------------------
+// ========================================
+// GET TOKEN
+// ========================================
 
-let wishlist =
-    JSON.parse(
-        localStorage.getItem(wishlistKey)
-    ) || [];
+function getToken() {
+    return localStorage.getItem("freshmartToken");
+}
 
 
-// ----------------------------------------
-// SAVE
-// ----------------------------------------
+// ========================================
+// LOAD WISHLIST FROM SERVER
+// ========================================
 
-function saveWishlist() {
+async function loadWishlist() {
 
-    localStorage.setItem(
-        wishlistKey,
-        JSON.stringify(wishlist)
-    );
+    const container =
+        document.getElementById("wishlistItems");
+
+    if (!container) return;
+
+    const token = getToken();
+
+    // User must be logged in
+    if (!token) {
+
+        container.innerHTML = `
+            <div class="empty-wishlist">
+
+                <div style="font-size:70px;">
+                    ❤️
+                </div>
+
+                <h2>
+                    Please Login
+                </h2>
+
+                <p>
+                    Login to view your wishlist.
+                </p>
+
+                <a
+                    href="login.html"
+                    class="btn btn-primary">
+
+                    Login
+
+                </a>
+
+            </div>
+        `;
+
+        return;
+    }
+
+
+    try {
+
+        const response = await fetch(
+            API_URL + "/api/wishlist",
+            {
+                method: "GET",
+
+                headers: {
+                    "Authorization": "Bearer " + token
+                }
+            }
+        );
+
+
+        const data = await response.json();
+
+        console.log(
+            "WISHLIST RESPONSE:",
+            data
+        );
+
+
+        // Token problem
+        if (response.status === 401 ||
+            response.status === 403) {
+
+            localStorage.removeItem("freshmartToken");
+            localStorage.removeItem("freshmartUser");
+
+            alert("Your login session has expired. Please login again.");
+
+            window.location.href = "login.html";
+
+            return;
+        }
+
+
+        if (!response.ok) {
+
+            container.innerHTML = `
+                <div class="empty-wishlist">
+
+                    <h2>
+                        Unable to load wishlist
+                    </h2>
+
+                    <p>
+                        ${data.message || "Something went wrong."}
+                    </p>
+
+                </div>
+            `;
+
+            return;
+        }
+
+
+        const items =
+            data.wishlist &&
+            Array.isArray(data.wishlist.items)
+                ? data.wishlist.items
+                : [];
+
+
+        displayWishlist(items);
+
+
+    } catch (error) {
+
+        console.error(
+            "LOAD WISHLIST ERROR:",
+            error
+        );
+
+
+        container.innerHTML = `
+            <div class="empty-wishlist">
+
+                <h2>
+                    Cannot connect to FreshMart
+                </h2>
+
+                <p>
+                    Please try again.
+                </p>
+
+            </div>
+        `;
+
+    }
 
 }
 
 
-// ----------------------------------------
-// LIKE BUTTON
-// ----------------------------------------
-
-document.addEventListener(
-    "click",
-    function (event) {
-
-        const button =
-            event.target.closest(".wishlist");
-
-        if (!button) return;
-
-
-        const productCard =
-            button.closest(".product-card");
-
-        if (!productCard) return;
-
-
-        const nameElement =
-            productCard.querySelector("h3");
-
-        if (!nameElement) return;
-
-
-        const productName =
-            nameElement.textContent.trim();
-
-
-        const index =
-            wishlist.indexOf(productName);
-
-
-        if (index === -1) {
-
-            wishlist.push(productName);
-
-            button.textContent = "♥";
-
-            button.classList.add("liked");
-
-        } else {
-
-            wishlist.splice(index, 1);
-
-            button.textContent = "♡";
-
-            button.classList.remove("liked");
-
-        }
-
-
-        saveWishlist();
-
-    }
-);
-
-
-// ----------------------------------------
-// WISHLIST PAGE PRODUCT DATA
-// ----------------------------------------
-
-const products = {
-
-    Apple: {
-        emoji: "🍎",
-        category: "Fresh Fruits",
-        price: 120,
-        unit: "kg"
-    },
-
-    Banana: {
-        emoji: "🍌",
-        category: "Fresh Fruits",
-        price: 60,
-        unit: "dozen"
-    },
-
-    Orange: {
-        emoji: "🍊",
-        category: "Fresh Fruits",
-        price: 90,
-        unit: "kg"
-    },
-
-    Carrot: {
-        emoji: "🥕",
-        category: "Vegetables",
-        price: 70,
-        unit: "kg"
-    },
-
-    Tomato: {
-        emoji: "🍅",
-        category: "Vegetables",
-        price: 45,
-        unit: "kg"
-    },
-
-    Potato: {
-        emoji: "🥔",
-        category: "Vegetables",
-        price: 40,
-        unit: "kg"
-    },
-
-    Milk: {
-        emoji: "🥛",
-        category: "Dairy",
-        price: 65,
-        unit: "litre"
-    },
-
-    Onion: {
-        emoji: "🧅",
-        category: "Vegetables",
-        price: 50,
-        unit: "kg"
-    },
-
-    Mango: {
-        emoji: "🥭",
-        category: "Fresh Fruits",
-        price: 100,
-        unit: "kg"
-    },
-
-    Bread: {
-        emoji: "🍞",
-        category: "Groceries",
-        price: 45,
-        unit: "pack"
-    },
-
-    Eggs: {
-        emoji: "🥚",
-        category: "Dairy",
-        price: 90,
-        unit: "dozen"
-    },
-
-    Rice: {
-        emoji: "🍚",
-        category: "Groceries",
-        price: 80,
-        unit: "kg"
-    }
-
-};
-
-
-// ----------------------------------------
+// ========================================
 // DISPLAY WISHLIST
-// ----------------------------------------
+// ========================================
 
-function displayWishlist() {
+function displayWishlist(items) {
 
     const container =
         document.getElementById("wishlistItems");
@@ -207,7 +171,7 @@ function displayWishlist() {
     container.innerHTML = "";
 
 
-    if (wishlist.length === 0) {
+    if (!items || items.length === 0) {
 
         container.innerHTML = `
 
@@ -241,13 +205,7 @@ function displayWishlist() {
     }
 
 
-    wishlist.forEach(function (productName) {
-
-        const product =
-            products[productName];
-
-        if (!product) return;
-
+    items.forEach(function (item) {
 
         const card =
             document.createElement("div");
@@ -256,27 +214,33 @@ function displayWishlist() {
             "product-card";
 
 
+        const imageHTML =
+            item.image
+                ? `<img src="${item.image}" alt="${item.name}">`
+                : `<div style="font-size:60px;">🛒</div>`;
+
+
         card.innerHTML = `
 
             <div class="product-image">
 
-                ${product.emoji}
+                ${imageHTML}
 
             </div>
 
             <div class="product-info">
 
                 <h3>
-                    ${productName}
+                    ${item.name}
                 </h3>
 
                 <p class="product-category">
-                    ${product.category}
+                    Fresh Product
                 </p>
 
                 <span class="product-price">
 
-                    ₹${product.price} / ${product.unit}
+                    ₹${Number(item.price)}
 
                 </span>
 
@@ -285,16 +249,18 @@ function displayWishlist() {
                     <button
                         type="button"
                         class="wishlist liked"
-                        data-product="${productName}">
+                        data-product-id="${item.productId}">
 
                         ♥
-
                     </button>
 
                     <button
                         type="button"
                         class="add-cart"
-                        data-product="${productName}">
+                        data-product-id="${item.productId}"
+                        data-product-name="${item.name}"
+                        data-product-price="${item.price}"
+                        data-product-image="${item.image || ""}">
 
                         Add to Cart
 
@@ -313,124 +279,122 @@ function displayWishlist() {
 }
 
 
-// ----------------------------------------
-// WISHLIST PAGE BUTTONS
-// ----------------------------------------
+// ========================================
+// REMOVE FROM WISHLIST
+// ========================================
 
 document.addEventListener(
     "click",
-    function (event) {
+    async function (event) {
 
-
-        // Remove from wishlist
-        const wishlistButton =
+        const button =
             event.target.closest(
-                ".wishlist[data-product]"
+                ".wishlist[data-product-id]"
             );
 
 
-        if (wishlistButton) {
-
-            const productName =
-                wishlistButton.dataset.product;
+        if (!button) return;
 
 
-            wishlist =
-                wishlist.filter(function (name) {
-
-                    return name !== productName;
-
-                });
+        const productId =
+            button.dataset.productId;
 
 
-            saveWishlist();
+        const token = getToken();
 
-            displayWishlist();
+
+        if (!token) {
+
+            alert("Please login first.");
+
+            window.location.href =
+                "login.html";
 
             return;
-
         }
 
 
-        // Add wishlist item to cart
-        const cartButton =
-            event.target.closest(
-                ".add-cart[data-product]"
-            );
+        try {
 
+            const response =
+                await fetch(
+                    API_URL +
+                    "/api/wishlist/remove",
+                    {
+                        method: "DELETE",
 
-        if (cartButton) {
+                        headers: {
+                            "Content-Type":
+                                "application/json",
 
-            const productName =
-                cartButton.dataset.product;
+                            "Authorization":
+                                "Bearer " + token
+                        },
 
-            const product =
-                products[productName];
-
-            if (!product) return;
-
-
-            const user =
-                localStorage.getItem(
-                    "freshmartUser"
+                        body: JSON.stringify({
+                            productId:
+                                productId
+                        })
+                    }
                 );
 
 
-            const cartKey = user
-                ? "freshmartCart_" +
-                  user.replace(
-                      /[^a-zA-Z0-9]/g,
-                      "_"
-                  )
-                : "freshmartCart_guest";
+            const data =
+                await response.json();
 
 
-            let cart =
-                JSON.parse(
-                    localStorage.getItem(cartKey)
-                ) || [];
-
-
-            const existing =
-                cart.find(function (item) {
-
-                    return item.name === productName;
-
-                });
-
-
-            if (existing) {
-
-                existing.quantity =
-                    Number(
-                        existing.quantity || 1
-                    ) + 1;
-
-            } else {
-
-                cart.push({
-
-                    name: productName,
-
-                    price: product.price,
-
-                    quantity: 1
-
-                });
-
-            }
-
-
-            localStorage.setItem(
-                cartKey,
-                JSON.stringify(cart)
+            console.log(
+                "REMOVE WISHLIST RESPONSE:",
+                data
             );
 
 
+            if (response.status === 401 ||
+                response.status === 403) {
+
+                localStorage.removeItem(
+                    "freshmartToken"
+                );
+
+                localStorage.removeItem(
+                    "freshmartUser"
+                );
+
+                alert(
+                    "Your login session has expired. Please login again."
+                );
+
+                window.location.href =
+                    "login.html";
+
+                return;
+            }
+
+
+            if (!response.ok) {
+
+                alert(
+                    data.message ||
+                    "Failed to remove wishlist item."
+                );
+
+                return;
+            }
+
+
+            // Reload from MongoDB
+            loadWishlist();
+
+
+        } catch (error) {
+
+            console.error(
+                "REMOVE WISHLIST ERROR:",
+                error
+            );
+
             alert(
-                "🛒 " +
-                productName +
-                " added to cart!"
+                "Cannot connect to FreshMart server."
             );
 
         }
@@ -439,8 +403,165 @@ document.addEventListener(
 );
 
 
-// ----------------------------------------
-// DISPLAY
-// ----------------------------------------
+// ========================================
+// ADD WISHLIST ITEM TO CART
+// ========================================
 
-displayWishlist();
+document.addEventListener(
+    "click",
+    async function (event) {
+
+        const button =
+            event.target.closest(
+                ".add-cart[data-product-id]"
+            );
+
+
+        if (!button) return;
+
+
+        const token = getToken();
+
+
+        if (!token) {
+
+            alert("Please login first.");
+
+            window.location.href =
+                "login.html";
+
+            return;
+        }
+
+
+        const productId =
+            button.dataset.productId;
+
+        const productName =
+            button.dataset.productName;
+
+        const productPrice =
+            Number(
+                button.dataset.productPrice
+            );
+
+        const productImage =
+            button.dataset.productImage || "";
+
+
+        try {
+
+            const response =
+                await fetch(
+                    API_URL + "/api/cart/add",
+                    {
+                        method: "POST",
+
+                        headers: {
+                            "Content-Type":
+                                "application/json",
+
+                            "Authorization":
+                                "Bearer " + token
+                        },
+
+                        body: JSON.stringify({
+
+                            productId:
+                                productId,
+
+                            name:
+                                productName,
+
+                            price:
+                                productPrice,
+
+                            quantity:
+                                1,
+
+                            image:
+                                productImage
+
+                        })
+                    }
+                );
+
+
+            const data =
+                await response.json();
+
+
+            if (response.status === 401 ||
+                response.status === 403) {
+
+                localStorage.removeItem(
+                    "freshmartToken"
+                );
+
+                localStorage.removeItem(
+                    "freshmartUser"
+                );
+
+                alert(
+                    "Your login session has expired. Please login again."
+                );
+
+                window.location.href =
+                    "login.html";
+
+                return;
+            }
+
+
+            if (!response.ok) {
+
+                alert(
+                    data.message ||
+                    "Failed to add product to cart."
+                );
+
+                return;
+            }
+
+
+            alert(
+                "🛒 " +
+                productName +
+                " added to cart!"
+            );
+
+
+        } catch (error) {
+
+            console.error(
+                "ADD TO CART ERROR:",
+                error
+            );
+
+            alert(
+                "Cannot connect to FreshMart server."
+            );
+
+        }
+
+    }
+);
+
+
+// ========================================
+// START
+// ========================================
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+        console.log(
+            "FreshMart wishlist page loaded"
+        );
+
+        loadWishlist();
+
+    }
+);
+
