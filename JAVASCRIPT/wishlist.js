@@ -214,11 +214,36 @@ function displayWishlist(items) {
             "product-card";
 
 
-        const imageHTML =
-    item.image
-        ? `<img src="../IMAGES/products/${item.image}" alt="${item.name}" style="width:140px;height:140px;object-fit:contain;">`
-        : `<img src="../IMAGES/products/grocery.jpg" alt="${item.name}" style="width:140px;height:140px;object-fit:contain;">`;
+        const productEmojis = {
+    apple001: "🍎",
+    banana001: "🍌",
+    orange001: "🍊",
+    onion001: "🧅",
+    carrot001: "🥕",
+    potato001: "🥔",
+    tomato001: "🍅",
+    milk001: "🥛",
+    rice001: "🍚",
+    egg001: "🥚",
+    corn001: "🌽",
+    watermelon001: "🍉"
+};
 
+const emoji =
+    productEmojis[item.productId] || "🛒";
+
+const imageHTML = `
+    <div style="
+        width: 140px;
+        height: 140px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 80px;
+    ">
+        ${emoji}
+    </div>
+`;
 
         card.innerHTML = `
 
