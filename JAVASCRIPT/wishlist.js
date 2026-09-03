@@ -215,9 +215,9 @@ function displayWishlist(items) {
 
 
         const imageHTML =
-            item.image
-                ? `<img src="${item.image}" alt="${item.name}">`
-                : `<div style="font-size:60px;">🛒</div>`;
+    item.image
+        ? `<img src="../IMAGES/products/${item.image}" alt="${item.name}" style="width:140px;height:140px;object-fit:contain;">`
+        : `<img src="../IMAGES/products/grocery.jpg" alt="${item.name}" style="width:140px;height:140px;object-fit:contain;">`;
 
 
         card.innerHTML = `

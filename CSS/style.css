@@ -554,6 +554,12 @@ select {
 
     font-size: 90px;
 }
+.product-image img {
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+    display: block;
+}
 
 .product-info {
     padding: 20px;
